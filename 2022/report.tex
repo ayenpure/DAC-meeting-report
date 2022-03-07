@@ -1,0 +1,174 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{fullpage,enumitem,amssymb,amsmath,xcolor,cancel,gensymb,hyperref,graphicx}
+\usepackage{indentfirst}
+
+\newcommand{\boit}[1]{\textbf{\textit{#1}}}
+
+\setlength{\parskip}{1em}
+
+\title{DAC Meeting Report}
+\author{Abhishek Yenpure}
+\date{March $8^{th}$, 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Research Statement}
+
+My research is at the intersection of scientific visualization and high performance computing.
+%
+Specifically I focus on the performance of a class of flow visualization algorithms that use ``particle advection.''
+%
+Particle advection entails displacing particles through a vector field.
+%
+This vector field could represent a velocity field or some field (e.g. electormagnetic)
+that enables the calculation of the velocity of the particles.
+%
+The particles are then displaced using this velocity.
+%
+Advecting (displacing) large number of particles efficiently using large supercomputers and novel
+accelerator hardware is an active area of research and also constitutes a bulk of my resarch.
+
+\section{Completed Projects}
+
+This section describes the research projects that were completed since the last DAC meeting.
+
+\subsection{A Guide to Particle Advection Performance (Area Exam)}
+\noindent \boit{Role:} Primary Author
+
+\noindent \boit{Research Objectives:}
+\\
+\noindent
+(a) To understand the performance of the various components of particle advection.
+\\
+(b) A survey of various works that optimize particle advection performance.
+\\
+(c) To formulate a cost function for each of these components.
+\\
+(d) Reason about performance of flow visualization algorithms.
+
+\noindent \boit{Specific Effort:}
+\\
+\noindent
+(a) Performing the survey of parallel particle advection works.
+
+\noindent \boit{Time:} In submission (8 hrs/week)
+
+\noindent \boit{Counts Towards Thesis:} Yes
+
+\subsection{Particle Advection Speedups from GPU and CPU Parallelism}
+
+\noindent \boit{Role:} Primary Author
+
+\noindent \boit{Research Objectives:}
+\\
+\noindent
+(a) To understand the impact of newer accelerator hardware on the performance of particle advection.
+\\
+(b) To understand the situations where GPUs perform poor compared to multicore CPUs and developing recommendations
+for using accelerators based on given workload.
+\\
+(c) To quantify the range of performance benefits while using accelerators (GPUs and multicore CPUs).
+
+%\noindent 
+\noindent \boit{Specific Effort:}
+
+\noindent (a) Performing the survey of parallel particle advection works.
+
+\noindent \boit{Time:} In Revision (8 hrs/week)
+
+\noindent \boit{Counts Towards Thesis:} Yes
+
+\section{Current Projects}
+
+
+\subsection{Considering Particle Advection Performance from the Perspective of the Roofline Model}
+\noindent \boit{Role:} Primary Author
+\noindent \boit{Research Objectives:}
+
+(a) Study the performance of particle advection using the Roofline model
+
+(b) Understanding the impact of various components on the performance
+
+(c) Evaluate different methods to improve the performance ---
+like space filling curves for data layout (better memory accesses)
+\noindent \boit{Specific Effort:}
+
+(a) Coding : framework for executing experiments
+
+(b) Performance Experiments : collecting perf. stats
+\noindent \boit{Time:}
+Ongoing (2 hrs/week)
+\noindent \boit{Counts Towards Thesis:} Yes
+
+\subsection{Efficient Parallel Particle Advection Via Targeting Devices}
+\noindent \boit{Role:} Primary Author
+\noindent \boit{Research Objectives:}
+
+(a) Using parallelism (GPU/CPU) to perform particle advection faster
+
+(b) Understand when the GPU performs better compared to the CPU
+
+(c) Formulate a function (Oracle) which makes decisions on where to execute
+\noindent \boit{Specific Effort:}
+
+(a) Coding : framework for executing experiments
+
+(b) Performance Experiments : collecting perf. stats
+\noindent \boit{Time:}
+Ongoing (2 hrs/week)
+\noindent \boit{Counts Towards Thesis:} Yes
+
+\subsection{General Particle Advection System}
+\noindent \boit{Role:} Primary Author
+\noindent \boit{Research Objectives:}
+
+(a) Developing an exascale ready general yet performant particle advection system
+
+(b) Provide great parallelization -- portable shared memory parallelization using VTK-m,
+rich distributed memory parallelization(over particles, over data, hybrid)
+
+(c)Demonstrate capability for diverse analysis -- connect with ECP app teams for their flow vis needs
+\noindent \boit{Specific Effort:}
+
+(a) Coding : VTK-m + framework for executing experiments
+
+(b) Evaluation : Performance studies
+
+(c) Evaluation : ECP use cases
+\noindent \boit{Time:}
+Ongoing (10 hrs/week)
+\noindent \boit{Counts Towards Thesis:} Yes
+
+\section{Objectives for the Next Year}
+
+Apart from performing revisions for works in submission and getting them accepted,
+the following projects need to be completed and submitted. 
+
+\subsection{Considering Particle Advection Performance from the Perspective of the Roofline Model}
+(a) Design and execute performance experiments
+
+(b) Collect relevant statistics --- w/ help from B. Norris (UO), C. Yang (LBNL)
+
+(c) Submit paper to $2^{nd}$ tear conference
+
+\subsection{Efficient Parallel Particle Advection Via Targeting Devices}
+(a) Design and execute performance experiments
+
+(b) Develop a heursitic based apporach for device selection
+
+(c) Submit paper to $2^{nd}$ tear conference
+
+
+\subsection{General Particle Advection System}
+(a) Complete implementing the system in VTK-m
+
+(b) Begin running performance studies
+
+(c) Connect w/ more ECP applications
+
+(d) Submit paper to Transaction on Visualization and Computer Graphics (TVCG)
+\end{document}
